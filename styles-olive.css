@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'Gotham SSm A';
+    src: url('path/to/GothamSSmA.woff2') format('woff2'),
+         url('path/to/GothamSSmA.woff') format('woff'),
+         url('path/to/GothamSSmA.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Gotham SSm A', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fafafa; /* Fondo de color blanco suave */
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #3b3b3b; /* Gris oscuro para el header */
+    background: linear-gradient(to bottom, #3b3b3b, #2c2c2c); /* Gradiente gris oscuro */
+    z-index: 1000;
+    height: 125px;
+    display: flexbox;
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 0 20px; /* Espaciado en los laterales */
+    box-sizing: border-box;
+}
+
+.header-logo {
+    align-self: flex-end;
+    width: 100px; /* Ajusta el ancho del logo */
+    height: 80px; /* Mantiene la proporción original */
+    margin-right: 20px; /* Espacio entre el logo y el menú */
+}
+nav ul {
+    list-style-type: none;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a, 
+nav ul li button {
+    color: #f5f5f5; /* Blanco humo para los enlaces y botones en el nav */
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+    background-color: #575757; /* Gris para el hover */
+}
+
+nav .dropdown-content {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    background-color: #3b3b3b; /* Gris oscuro para el dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transiciones suaves */
+
+}
+
+nav .dropdown-content a {
+    color: #f5f5f5; /* Blanco humo para los enlaces del dropdown */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    
+}
+
+nav .dropdown-content a:hover {
+    background-color: #575757; /* Gris para el hover en el dropdown */
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* General Styles */
+footer {
+    background-color: #3b3b3b; /* Gris oscuro para el footer */
+    background: linear-gradient(to bottom, #3b3b3b, #2c2c2c); /* Gradiente gris oscuro */
+    color: #f5f5f5; /* Blanco humo para el texto del footer */
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-links, footer .general-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+footer .social-links a, footer .general-links a {
+    color: #f5f5f5; /* Blanco humo para los enlaces en el footer */
+    text-decoration: none;
+}
+
+footer .social-links a:hover, footer .general-links a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Sections */
+.video-section {
+    position: relative;
+    overflow: hidden;
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #fafafa, #f5f5f5); /* Gradiente blanco suave a blanco humo */
+}
+
+.video-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover; /* Mantiene la proporción del video */
+}
+
+.carousel-section .carousel {
+    width: 80%;
+    margin: auto;
+}
+
+.carousel-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-item img {
+    width: 80%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .carousel-item img {
+        width: 90%; /* Imágenes más pequeñas en móviles */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-item img {
+        width: 85%; /* Imágenes más pequeñas en tabletas */
+    }
+}
+@media (min-width: 1024px) {
+    .carousel-item img {
+        width: 80%; /* Imágenes más pequeñas en pantallas grandes */
+    }
+}
+
+.slick-dots {
+    bottom: 10px;
+}
+
+.slick-arrow {
+    font-size: 24px;
+    color: #3b3b3b; /* Gris oscuro para las flechas */
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    margin-top: 20px;
+}
+
+/* Card */
+.card {
+    background-color: #ffffff; /* Blanco para las tarjetas */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px; /* Ancho máximo de la tarjeta */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centra las tarjetas en el contenedor */
+}
+
+.card img {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #3b3b3b; /* Gris oscuro para los títulos */
+}
+
+.card-content p {
+    font-size: 0.9em;
+    color: #555; /* Gris medio para el texto */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Las tarjetas se apilan verticalmente en pantallas más pequeñas */
+        align-items: center; /* Centra las tarjetas verticalmente */
+    }
+    
+    .card {
+        width: 90%; /* Las tarjetas ocupan el 90% del ancho del contenedor */
+        max-width: 400px; /* Ancho máximo de la tarjeta en pantallas pequeñas */
+    }
+}
+
+
+.map-section iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    background: linear-gradient(to bottom, #fafafa, #f5f5f5); /* Gradiente blanco suave a blanco humo */
+}
+
+/* Specific pages styles */
+#services, #taxes, #contact, #migration, #accounting {
+    padding: 20px;
+}
+
+#services h1[data-translate="servicesTitle"],
+#taxes h1[data-translate="taxesTitle"],
+#contact h1[data-translate="contactTitle"],
+#migration h1[data-translate="migrationTitle"],
+#accounting h1[data-translate="accountingTitle"] {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3b3b3b; /* Gris oscuro para los títulos */
+}
+
+/* Additional Specific Styles */
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+.service-item h2 {
+    margin-bottom: 10px;
+    color: #3b3b3b; /* Gris oscuro para los títulos */
+}
+
+.service-item p {
+    margin-bottom: 15px;
+    color: #555; /* Gris medio para el texto */
+}
+
+.service-item a {
+    color: #007bff; /* Azul vibrante para los enlaces */
+    text-decoration: none;
+}
+
+.service-item a:hover {
+    text-decoration: underline;
+}
+
+.document-download, .tax-info, .form-images, .faq, .migration-info, .accounting-info {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff; /* Blanco para el fondo de secciones */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px;
+}
+
+.form-images img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-item h3 {
+    cursor: pointer;
+    color: #007bff; /* Azul vibrante para las preguntas */
+}
+
+.faq-item .answer {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Open the answer on click */
+.faq-item.active .answer {
+    display: block;
+}
+
